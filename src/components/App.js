@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./../styles/App.css";
 
-const App = () => {
-  let [txt, setTxt] = useState("");
+function App() {
+  let [name, setName] = useState("");
 
   function handleChange(event) {
     if (event.target.value) {
-      setTxt(`Hello, ${event.target.value}!`);
+      setName(`${event.target.value}`);
     } else {
-      setTxt("");
+      setName("");
     }
   }
   return (
@@ -20,18 +20,16 @@ const App = () => {
       <div>
         <input
           type="text"
-          value={txt}
+          value={name}
           placeholder="Enter Your Name"
           onChange={handleChange}
-        >
-          {" "}
-        </input>
+        />
       </div>
       <br></br>
 
-      <p>{txt}</p>
+      <p>{name !== "" && `Hello, ${name}!`}</p>
     </div>
   );
-};
+}
 
 export default App;
