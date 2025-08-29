@@ -26,7 +26,7 @@ function Greeting() {
       </div>
       <br></br>
 
-      <p>{name !== "" && `Hello, ${name}!`}</p>
+      <p>{name !== "" && `Hello ${name}!`}</p>
     </div>
   );
 }
