@@ -4,7 +4,7 @@ import "./../styles/App.css";
 const App = () => {
   let [txt, setTxt] = useState("");
 
-  function handleKeyUp(event) {
+  function handleChange(event) {
     if (event.target.value) {
       setTxt(`Hello, ${event.target.value}!`);
     } else {
@@ -18,13 +18,14 @@ const App = () => {
       <p>Enter Your Name: </p>
       <br></br>
       <div>
-        <textarea
+        <input
           type="text"
+          value={txt}
           placeholder="Enter Your Name"
-          onKeyUp={handleKeyUp}
+          onChange={handleChange}
         >
           {" "}
-        </textarea>
+        </input>
       </div>
       <br></br>
 
